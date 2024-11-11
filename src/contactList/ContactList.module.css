@@ -1,8 +1,10 @@
 .contactList {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
   }
   
   .contactItem {
-    margin-bottom: 8px;
+    margin: 0 10px 10px 0;
   }

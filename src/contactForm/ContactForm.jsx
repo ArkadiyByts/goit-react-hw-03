@@ -17,7 +17,7 @@ const ContactForm = ({ onAdd }) => {
 
   const handleSubmit = (values, actions) => {
     onAdd({
-      id: nanoid(),  // You might prefer `id: nanoid()` for a unique ID generator
+      id: nanoid(),  
       name: values.name,
       number: values.number,
     });
@@ -32,17 +32,17 @@ const ContactForm = ({ onAdd }) => {
     >
       {({ errors, touched }) => (
         <Form>
-          <div>
+          <div className={css.formItem}>
             <label htmlFor="name">Name</label>
             <Field type="text" name="name" />
             {errors.name && touched.name && <div>{errors.name}</div>}
           </div>
-          <div>
+          <div className={css.formItem}>
             <label htmlFor="number">Phone Number</label>
             <Field type="tel" name="number" />
             {errors.number && touched.number && <div>{errors.number}</div>}
           </div>
-          <button type="submit">Add Contact</button>
+          <button className={css.submButton} type="submit">Add Contact</button>
         </Form>
       )}
     </Formik>
